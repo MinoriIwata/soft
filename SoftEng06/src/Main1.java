@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main1 {
 
-	public void main1(String[] args)
+	public void main(String[] args)
 	{
 		ArrayList<Student> list=new ArrayList<Student>();
 		//3人の学生インスタンスを生成
