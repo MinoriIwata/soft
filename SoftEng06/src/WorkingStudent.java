@@ -40,7 +40,7 @@ public class WorkingStudent extends Student {
 	@Override
 	public String toString()
 	{
-		return String.format("%s\t%s\t%4d単位\t%s",getId(),getName(),getCredit(),getCompany());
+		return String.format("%s,%s,%4d,%s",getId(),getName(),getCredit(),getCompany());
 	}
 
 }
