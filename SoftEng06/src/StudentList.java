@@ -10,6 +10,7 @@ public class StudentList {
 
 	public StudentList(String filename) {
 
+		students=StudentMapFactory.create(filename);
 	}
 
 	public boolean addStudent(Student student) {
@@ -61,7 +62,7 @@ public class StudentList {
 	}
 
 	public void load() {
-		StudentMapFactory.create(filename);
+		students=StudentMapFactory.create(filename);
 	}
 
 	public void save() {
@@ -71,7 +72,8 @@ public class StudentList {
 			pw = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
 			for (String key : students.keySet()) {
 				Student target = students.get(key);
-				pw.print(target.toString());
+				String t=target.toString();
+				pw.print(t);
 			}
 			
 		} catch (IOException e) {
@@ -84,6 +86,11 @@ public class StudentList {
 		}
 		pw.close();
 
+	}
+	
+	public void setFilename(String filename)
+	{
+		this.filename=filename;
 	}
 
 }

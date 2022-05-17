@@ -18,7 +18,8 @@ public class StudentManagement {
 		System.out.print("[詳細]詳細を確認する学生の学籍番号を入力してください:");
 		String targetid = KeyBoard.inputString();
 		Student target = studentList.getStudent(targetid);
-		target.toString();
+		String line=target.toString();
+		System.out.println(line);
 
 	}
 
@@ -38,10 +39,12 @@ public class StudentManagement {
 			boolean check = studentList.addStudent(member);
 			if (check == true) {
 				System.out.println("登録が完了しました.");
+				studentList.save();
+				studentList.load();
 			} else {
 				System.out.println("登録中に不備が見つかりました,やり直してください.");
 			}
-			studentList.save();
+
 			break;
 
 		case 2:
@@ -65,10 +68,12 @@ public class StudentManagement {
 			boolean sep = studentList.addStudent(inter);
 			if (sep == true) {
 				System.out.println("登録が完了しました.");
+				studentList.save();
+				studentList.load();
 			} else {
 				System.out.println("登録中に不備が見つかりました,やり直してください.");
 			}
-			studentList.save();
+
 			break;
 
 		case 3:
@@ -84,10 +89,12 @@ public class StudentManagement {
 			boolean hand = studentList.addStudent(work);
 			if (hand == true) {
 				System.out.println("登録が完了しました.");
+				studentList.save();
+				studentList.load();
 			} else {
 				System.out.println("登録中に不備が見つかりました,やり直してください.");
 			}
-			studentList.save();
+
 			break;
 
 		default:
@@ -101,15 +108,14 @@ public class StudentManagement {
 
 	public void deleteStudent() {
 		System.out.print("[削除]リストから削除する学生の学籍番号を入力してください：");
-		String target=KeyBoard.inputString();
-		boolean check=studentList.deleteStudent(target);
-		if(check==true)
-		{
+		String target = KeyBoard.inputString();
+		boolean check = studentList.deleteStudent(target);
+		if (check == true) {
 			System.out.println("削除が完了しました");
 			studentList.save();
-		}
-		else
-		{
+
+			studentList.load();
+		} else {
 			System.out.println("目的の学生が見つかりません、最初からやり直して下さい");
 		}
 
@@ -120,17 +126,15 @@ public class StudentManagement {
 		System.out.println("[変更]学生の単位数を修正します：");
 
 		System.out.print("修正対象の学生の学籍番号を入力してください:");
-		String id=KeyBoard.inputString();
+		String id = KeyBoard.inputString();
 		System.out.print("単位の修正量を入力してください:");
-		int m=KeyBoard.inputNumber();
-		boolean check=studentList.updateCredit(id, m);
-		if(check==true)
-		{
+		int m = KeyBoard.inputNumber();
+		boolean check = studentList.updateCredit(id, m);
+		if (check == true) {
 			System.out.println("修正が完了しました");
 			studentList.save();
-		}
-		else
-		{
+			studentList.load();
+		} else {
 			System.out.println("目的の学生が見つかりません、最初からやり直して下さい");
 		}
 

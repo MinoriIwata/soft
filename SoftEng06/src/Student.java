@@ -129,7 +129,7 @@ public class Student {
 	@Override
 	public String toString() {
 		//String.format() はSystem.out.printf()とほぼ同じだが文字列として返すメソッド．
-		return String.format("%s,%s,4d", getId(), getName(), getCredit());
+		return String.format("%s,%s,%4d", getId(), getName(), getCredit());
 	}
 
 }
