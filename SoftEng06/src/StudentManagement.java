@@ -41,6 +41,8 @@ public class StudentManagement {
 				System.out.println("登録が完了しました.");
 				studentList.save();
 				studentList.load();
+
+				System.out.println("リストを更新しました");
 			} else {
 				System.out.println("登録中に不備が見つかりました,やり直してください.");
 			}
@@ -70,6 +72,8 @@ public class StudentManagement {
 				System.out.println("登録が完了しました.");
 				studentList.save();
 				studentList.load();
+
+				System.out.println("リストを更新しました");
 			} else {
 				System.out.println("登録中に不備が見つかりました,やり直してください.");
 			}
@@ -91,6 +95,8 @@ public class StudentManagement {
 				System.out.println("登録が完了しました.");
 				studentList.save();
 				studentList.load();
+
+				System.out.println("リストを更新しました");
 			} else {
 				System.out.println("登録中に不備が見つかりました,やり直してください.");
 			}
@@ -115,6 +121,8 @@ public class StudentManagement {
 			studentList.save();
 
 			studentList.load();
+
+			System.out.println("リストを更新しました");
 		} else {
 			System.out.println("目的の学生が見つかりません、最初からやり直して下さい");
 		}
@@ -134,6 +142,7 @@ public class StudentManagement {
 			System.out.println("修正が完了しました");
 			studentList.save();
 			studentList.load();
+			System.out.println("リストを更新しました");
 		} else {
 			System.out.println("目的の学生が見つかりません、最初からやり直して下さい");
 		}

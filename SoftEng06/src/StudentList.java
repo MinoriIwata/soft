@@ -70,12 +70,10 @@ public class StudentList {
 		PrintWriter pw = null;
 		try {
 			pw = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
-			for (String key : students.keySet()) {
-				Student target = students.get(key);
-				String t=target.toString();
-				pw.print(t);
+			for (String id: students.keySet()) {
+				Student s = students.get(id); //学生を取り出し，
+				pw.println(s);
 			}
-			
 		} catch (IOException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();

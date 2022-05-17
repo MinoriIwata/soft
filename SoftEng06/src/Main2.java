@@ -7,6 +7,7 @@ public class Main2 {
 		//マップのキー（学籍番号id)のそれぞれから
 		for (String id: students.keySet()) {
 			Student s = students.get(id); //学生を取り出し，
+			
 			System.out.println(s);	 //表示してみる
 		}
 	}
