@@ -1,5 +1,6 @@
 
-public class Main {
+public class Main 
+{
 	FriendList list = new FriendList();
 	FriendManager manage = new FriendManager();
 
