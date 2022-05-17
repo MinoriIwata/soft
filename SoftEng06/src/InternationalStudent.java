@@ -60,7 +60,13 @@ public class InternationalStudent extends Student {
 
 	// ↓setter．厳密には値チェックをしたいところ
 	public void setCountry(String country) {
-		this.country = country;
+		if (country.equals("") || country == null) {
+
+			System.out.println("国名がありません、海外で登録します.");
+			this.country = "海外";
+		} else {
+			this.country = country;
+		}
 	}
 
 	public void setKokuhi(boolean kokuhi) {
@@ -72,6 +78,23 @@ public class InternationalStudent extends Student {
 	public void hello() {
 		super.hello(); // 普通の学生のあいさつの後に，
 		this.explain(); // 留学生の説明をする．
+	}
+	
+	@Override
+	public String toString()
+	{
+		boolean check=isKokuhi();
+		String money="";
+		if(check==true)
+		{
+			money="国費留学生";
+		}
+		else
+		{
+			money="私費留学生";
+		}
+			
+		return String.format("%s\t%s\t%4d単位\t%s\t%s",getId(),getName(),getCredit(),getCountry(),money);
 	}
 
 }
