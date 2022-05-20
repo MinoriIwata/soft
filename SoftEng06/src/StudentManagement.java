@@ -33,9 +33,10 @@ public class StudentManagement {
 			System.out.print("学籍番号:");
 			member.setId(KeyBoard.inputString());
 			System.out.print("氏名:");
-			member.setId(KeyBoard.inputString());
+			member.setName(KeyBoard.inputString());
 			System.out.print("取得単位数:");
 			member.setCredit(KeyBoard.inputNumber());
+			member.setSep(select-1);
 			boolean check = studentList.addStudent(member);
 			if (check == true) {
 				System.out.println("登録が完了しました.");
@@ -55,11 +56,12 @@ public class StudentManagement {
 			System.out.print("学籍番号:");
 			inter.setId(KeyBoard.inputString());
 			System.out.print("氏名:");
-			inter.setId(KeyBoard.inputString());
+			inter.setName(KeyBoard.inputString());
 			System.out.print("取得単位数:");
 			inter.setCredit(KeyBoard.inputNumber());
 			System.out.print("出身国:");
 			inter.setCountry(KeyBoard.inputString());
+			inter.setSep(select-1);
 			System.out.print("留学は国費(1)か私費(0)か：");
 			if (KeyBoard.inputString().equals("1"))
 
@@ -85,11 +87,12 @@ public class StudentManagement {
 			System.out.print("学籍番号:");
 			work.setId(KeyBoard.inputString());
 			System.out.print("氏名:");
-			work.setId(KeyBoard.inputString());
+			work.setName(KeyBoard.inputString());
 			System.out.print("取得単位数:");
 			work.setCredit(KeyBoard.inputNumber());
 			System.out.print("勤務先:");
 			work.setCompany(KeyBoard.inputString());
+			work.setSep(select-1);
 			boolean hand = studentList.addStudent(work);
 			if (hand == true) {
 				System.out.println("登録が完了しました.");

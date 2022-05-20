@@ -18,6 +18,7 @@ public class StudentMapFactory {
 				int sep = Integer.parseInt(data[3]);
 				if (sep == 0) {
 					Student target = new Student(id, name, credit);
+					target.setSep(sep);
 					map.put(id, target);
 				} else {
 					if (sep == 1) {
@@ -30,10 +31,12 @@ public class StudentMapFactory {
 							kokuhi = false;
 						}
 						InternationalStudent inter = new InternationalStudent(id, name, credit, country, kokuhi);
+						inter.setSep(sep);
 						map.put(id, inter);
 					} else {
 						String company = data[4];
 						WorkingStudent emp = new WorkingStudent(id, name, credit, company);
+						emp.setSep(sep);
 						map.put(id, emp);
 
 					}

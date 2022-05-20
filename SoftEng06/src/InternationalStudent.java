@@ -94,7 +94,7 @@ public class InternationalStudent extends Student {
 			money="私費留学生";
 		}
 			
-		return String.format("%s,%s,%4d,%s,%s",getId(),getName(),getCredit(),getCountry(),money);
+		return String.format("%s,%s,%d,%d,%s,%s",getId(),getName(),getCredit(),getSep(),getCountry(),money);
 	}
 
 }

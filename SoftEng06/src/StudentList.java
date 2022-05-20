@@ -71,16 +71,15 @@ public class StudentList {
 		try {
 			pw = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
 			for (String id: students.keySet()) {
-				Student s = students.get(id); //学生を取り出し，
-				pw.println(s);
+				Student s = students.get(id); 
+				
+				String data=s.toString();//学生を取り出し，
+				System.out.println(data);
+				pw.println(data);
 			}
 		} catch (IOException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
-		}
-
-		while (students.size() != 0) {
-
 		}
 		pw.close();
 

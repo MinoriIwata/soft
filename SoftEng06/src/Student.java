@@ -3,10 +3,11 @@
  */
 public class Student {
 	/*------ 学生の状態を決めるフィールド群 -----*/
-	//フィールドはprivateにする．
+	// フィールドはprivateにする．
 	private String id; // 学籍番号
 	private String name; // 名前
 	private int credit; // 単位数
+	private int sep;// 区分番号
 
 	/* 静的フィールド．全インスタンスで共通 */
 	private static final int REQUIREMENT_OF_GRADUATION = 130; // 卒業要件単位数
@@ -22,7 +23,7 @@ public class Student {
 	 * コンストラクタ．学番，名前，単位数を指定して，学生インスタンスを生成する．
 	 */
 	public Student(String id, String name, int credit) {
-		//無効な値に備えて，setterを呼び出す．
+		// 無効な値に備えて，setterを呼び出す．
 		this.setId(id);
 		this.setName(name);
 		this.setCredit(credit);
@@ -31,8 +32,7 @@ public class Student {
 	/*------------------ 主要な学生の振る舞い ---------------------*/
 	/** (1) 自己紹介をする */
 	public void hello() {
-		System.out.println("こんにちは．学籍番号" + id + "の" + name + "です．"
-				+ "よろしくお願いします．");
+		System.out.println("こんにちは．学籍番号" + id + "の" + name + "です．" + "よろしくお願いします．");
 	}
 
 	/** (2) 卒業報告をする */
@@ -51,28 +51,24 @@ public class Student {
 		credit = credit + amount;
 	}
 
-	/* --------------- 以下，アクセサ (getter/setter)-----------*/
+	/* --------------- 以下，アクセサ (getter/setter)----------- */
 
 	/**
-	 * 卒業要件単位数を取得する（getterの命名法に伴って，メソッド名変更）
-	 * (REQUIREMENT_OF_GRADUATIONのgetter)
+	 * 卒業要件単位数を取得する（getterの命名法に伴って，メソッド名変更） (REQUIREMENT_OF_GRADUATIONのgetter)
 	 */
 	public static int getRequirementOfGraduation() {
 		return REQUIREMENT_OF_GRADUATION;
 	}
 
-
 	/**
-	 * 学籍番号を取得する．
-	 * (フィールドidのgetter)
+	 * 学籍番号を取得する． (フィールドidのgetter)
 	 */
 	public String getId() {
 		return id;
 	}
 
 	/**
-	 * 学籍番号をセットする．空文字列の場合には，"99999999X"をセットする．
-	 * (フィールドidのsetter)
+	 * 学籍番号をセットする．空文字列の場合には，"99999999X"をセットする． (フィールドidのsetter)
 	 */
 	public void setId(String id) {
 		if (id.equals("") || id == null) {
@@ -91,8 +87,7 @@ public class Student {
 	}
 
 	/**
-	 * 名前をセットする．空文字列の場合には，"名無し"をセットする．
-	 * (フィールドnameのsetter)
+	 * 名前をセットする．空文字列の場合には，"名無し"をセットする． (フィールドnameのsetter)
 	 */
 	public void setName(String name) {
 		if (name.equals("") || name == null) {
@@ -114,7 +109,7 @@ public class Student {
 	 * 単位数をセットする．負の場合は0に補正する．
 	 */
 	public void setCredit(int credit) {
-		if (credit < 0 ) {
+		if (credit < 0) {
 			System.out.println("負の単位数は認められません．0にセットします．");
 			this.credit = 0;
 		} else {
@@ -122,14 +117,21 @@ public class Student {
 		}
 	}
 
+	public int getSep() {
+		return sep;
+	}
+
+	public void setSep(int sep) {
+		this.sep = sep;
+	}
 
 	/**
 	 * 文字列表現． "12345678X(タブ)中村(タブ)146単位"のような感じで表現する
 	 */
 	@Override
 	public String toString() {
-		//String.format() はSystem.out.printf()とほぼ同じだが文字列として返すメソッド．
-		return String.format("%s,%s,%4d", getId(), getName(), getCredit());
+		// String.format() はSystem.out.printf()とほぼ同じだが文字列として返すメソッド．
+		return String.format("%s,%s,%d,%d", getId(), getName(), getCredit(),getSep());
 	}
 
 }
