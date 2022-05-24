@@ -74,7 +74,6 @@ public class StudentList {
 				Student s = students.get(id); 
 				
 				String data=s.toString();//学生を取り出し，
-				System.out.println(data);
 				pw.println(data);
 			}
 		} catch (IOException e) {

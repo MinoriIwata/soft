@@ -143,6 +143,8 @@ public class StudentManagement {
 		boolean check = studentList.updateCredit(id, m);
 		if (check == true) {
 			System.out.println("修正が完了しました");
+            Student target = studentList.getStudent(id);
+			target.graduate();
 			studentList.save();
 			studentList.load();
 			System.out.println("リストを更新しました");
