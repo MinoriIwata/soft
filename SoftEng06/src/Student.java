@@ -133,5 +133,7 @@ public class Student {
 		// String.format() はSystem.out.printf()とほぼ同じだが文字列として返すメソッド．
 		return String.format("%s,%s,%d,%d", getId(), getName(), getCredit(),getSep());
 	}
+	
+	
 
 }
