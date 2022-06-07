@@ -28,7 +28,7 @@ public class Box extends Shape {
 					if (j == 0 || j == w - 1) {
 						System.out.print(pen);
 					} else {
-						System.out.print(" ");
+						System.out.print("　");
 					}
 				}
 				System.out.print("\n");
