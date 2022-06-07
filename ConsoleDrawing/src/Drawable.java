@@ -1,4 +1,4 @@
 
-public class Drawable {
+public interface Drawable {
 
 }
