@@ -6,7 +6,7 @@ public abstract class Shape implements Drawable {
 	public void setPen(String pen) {
 		if (pen.equals("") || pen == null) {
 			System.out.println("無効な名前です．「名無し」をセットします．");
-			this.pen = "(××)";
+			this.pen = "(■)";
 		} else {
 			this.pen = pen;
 		}

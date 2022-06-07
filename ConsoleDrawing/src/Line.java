@@ -15,7 +15,7 @@ public class Line extends Shape {
 		System.out.println(toString());
 		for (int i=0;i<this.getLength();i++)
 		{
-			System.out.print("=");
+			System.out.print(pen);
 		}
 		System.out.print("\n");
 

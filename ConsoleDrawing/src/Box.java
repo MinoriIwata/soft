@@ -20,13 +20,13 @@ public class Box extends Shape {
 		for (i = 0; i < h; i++) {
 			if (i == 0 || i == h - 1) {
 				for (j = 0; j < w; j++) {
-					System.out.print("■");
+					System.out.print(pen);
 				}
 				System.out.print("\n");
 			} else {
 				for (j = 0; j < w; j++) {
 					if (j == 0 || j == w - 1) {
-						System.out.print("■");
+						System.out.print(pen);
 					} else {
 						System.out.print(" ");
 					}
