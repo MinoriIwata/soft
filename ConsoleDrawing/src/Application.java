@@ -74,6 +74,12 @@ public class Application {
 	}
 
 	public void Mario() {
+		String line;
+		System.out.print("マリオのセリフは？:");
+		line=KeyBoard.inputString();
+		Drawable mario=new Mario(line);
+		System.out.println(mario);
+		mario.draw();
 
 	}
 

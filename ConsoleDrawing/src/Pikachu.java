@@ -24,6 +24,7 @@ public class Pikachu extends PixelArt {
 		System.out.println("　■　　　　　　　　　　■");
 		System.out.println("　　■　　■■■■　　■");
 		System.out.println("　　　■■　　　　■■");
+		System.out.println("===============================");
 	}
 
 	@Override
