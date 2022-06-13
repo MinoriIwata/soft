@@ -17,10 +17,16 @@ public class Yaruo extends AsciiArt{
 		System.out.println("　／（ ●）（●）＼");
 		System.out.println("／::⌒（__人__）⌒::＼　"+getLine());
 		System.out.println("|　　　 |r┬-|　　 　|");
-		System.out.println("＼  　   `ー'´ 　 ／　<");
+		System.out.println("＼  　   `ー'´ 　 ／　");
 		System.out.println("===============================");
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "セリフ「" + line + "」";
+	}
+
 	public String getLine() {
 		return line;
 	}

@@ -37,47 +37,46 @@ public class Application {
 		circle.display();
 
 	}
-	
+
 	public void CustomStep() {
-		
+
 		int height;
 		System.out.print("階段を作ります　階段の高さ:");
 		height = KeyBoard.inputNumber();
 		System.out.print("ペンの種類を教えてください:");
 		String pen = KeyBoard.inputString();
-		Step step=new Step(height);
+		Step step = new Step(height);
 		step.setPen(pen);
 		step.display();
-		
+
 	}
 
 	public void HorizontalText() {
 
 		System.out.print("書きだしたい文字を教えてください:");
 		String line = KeyBoard.inputString();
-		HorizontalText text=new HorizontalText();
+		HorizontalText text = new HorizontalText();
 		text.setLine(line);
-		text.toString();
+		System.out.println(text);
 		text.draw();
-		
-		
+
 	}
 
 	public void VirticalText() {
 		System.out.print("書きだしたい文字を教えてください:");
 		String line = KeyBoard.inputString();
-		VirticalText text=new VirticalText();
+		VirticalText text = new VirticalText();
 		text.setLine(line);
-		text.toString();
+		System.out.println(text);
 		text.draw();
-		
+
 	}
 
 	public void Mario() {
 		String line;
 		System.out.print("マリオのセリフは？:");
-		line=KeyBoard.inputString();
-		Drawable mario=new Mario(line);
+		line = KeyBoard.inputString();
+		Drawable mario = new Mario(line);
 		System.out.println(mario);
 		mario.draw();
 
@@ -94,10 +93,21 @@ public class Application {
 
 	public void Mona() {
 
+		String line;
+		System.out.print("ねこのセリフは？:");
+		line = KeyBoard.inputString();
+		Drawable mona = new Mona(line);
+		System.out.println(mona);
+		mona.draw();
 	}
 
 	public void Yaruo() {
-
+		String line;
+		System.out.print("やる夫のセリフは？:");
+		line = KeyBoard.inputString();
+		Drawable yaruo = new Yaruo(line);
+		System.out.println(yaruo);
+		yaruo.draw();
 	}
 
 }

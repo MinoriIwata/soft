@@ -20,6 +20,11 @@ public class Mona extends AsciiArt{
 		System.out.println("===============================");
 		
 	}
+	@Override
+	public String toString() {
+		return "セリフ「" + line + "」";
+	}
+
 	public String getLine() {
 		return line;
 	}

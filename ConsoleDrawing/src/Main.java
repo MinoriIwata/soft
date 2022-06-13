@@ -11,5 +11,8 @@ public class Main {
 		app.HorizontalText();
 		app.VirticalText();
 		app.CustomStep();
+		app.Mario();
+		app.Mona();
+		app.Yaruo();
 	}
 }

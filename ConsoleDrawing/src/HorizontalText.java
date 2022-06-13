@@ -23,7 +23,7 @@ public class HorizontalText extends Text {
 	@Override 
 	public String toString()
 	{
-		return "横書き文字\n";
+		return "横書き文字";
 		
 	}
 }

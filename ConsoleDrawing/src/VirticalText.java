@@ -26,7 +26,7 @@ public class VirticalText extends Text {
 
 	@Override
 	public String toString() {
-		return "縦書き文字\n";
+		return "縦書き文字";
 
 	}
 }
