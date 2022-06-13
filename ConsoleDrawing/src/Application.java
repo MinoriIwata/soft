@@ -37,13 +37,40 @@ public class Application {
 		circle.display();
 
 	}
+	
+	public void CustomStep() {
+		
+		int height;
+		System.out.print("階段を作ります　階段の高さ:");
+		height = KeyBoard.inputNumber();
+		System.out.print("ペンの種類を教えてください:");
+		String pen = KeyBoard.inputString();
+		Step step=new Step(height);
+		step.setPen(pen);
+		step.display();
+		
+	}
 
 	public void HorizontalText() {
 
+		System.out.print("書きだしたい文字を教えてください:");
+		String line = KeyBoard.inputString();
+		HorizontalText text=new HorizontalText();
+		text.setLine(line);
+		text.toString();
+		text.draw();
+		
+		
 	}
 
 	public void VirticalText() {
-
+		System.out.print("書きだしたい文字を教えてください:");
+		String line = KeyBoard.inputString();
+		VirticalText text=new VirticalText();
+		text.setLine(line);
+		text.toString();
+		text.draw();
+		
 	}
 
 	public void Mario() {

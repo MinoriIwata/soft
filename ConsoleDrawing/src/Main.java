@@ -8,5 +8,8 @@ public class Main {
 		app.CustomBox();
 		app.CustomCircle();
 		app.CustomPikachu();
+		app.HorizontalText();
+		app.VirticalText();
+		app.CustomStep();
 	}
 }
