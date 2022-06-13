@@ -12,7 +12,6 @@ public class Line extends Shape {
 
 	@Override
 	public void draw() {
-		System.out.println(toString());
 		for (int i=0;i<this.getLength();i++)
 		{
 			System.out.print(pen);
