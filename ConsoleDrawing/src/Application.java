@@ -91,6 +91,11 @@ public class Application {
 		pikachu.draw();
 	}
 
+	public void Poyo()
+	{
+		Drawable poyo=new Poyo();
+		poyo.draw();
+	}
 	public void Mona() {
 
 		String line;
