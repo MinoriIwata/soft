@@ -39,8 +39,15 @@ public class Box extends Shape {
 
 	@Override
 	public String toString() {
-		String line ="四角形（"+this.getWidth()+","+this.getHeight()+")";
-		return line ;
+		String line = "四角形（" + this.getWidth() + "," + this.getHeight() + ")";
+		return line;
+	}
+
+	@Override
+	public void display() {
+
+		System.out.println(toString());
+		draw();
 	}
 
 	public int getWidth() {

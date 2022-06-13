@@ -27,6 +27,13 @@ public class Line extends Shape {
 		String line ="直線（"+this.getLength()+")";
 		return line ;
 	}
+	
+	@Override
+	public void display() {
+
+		System.out.println(toString());
+		draw();
+	}
 
 	public int getLength() {
 		return length;
