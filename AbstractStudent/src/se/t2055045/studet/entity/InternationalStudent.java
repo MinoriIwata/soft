@@ -42,4 +42,15 @@ public class InternationalStudent extends Student {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	@Override
+	public String toString() {
+		String k=null;
+		if (kokuhi == true) {
+			k="国費留学生";
+		} else {
+			k="私費留学生";
+		}
+		return String.format("%s\t%s\t%4d単位\t%s\t%s\t", getId(), getName(), getCredit(),getCountry(),k);
+	}
 }

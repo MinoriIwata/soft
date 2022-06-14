@@ -37,6 +37,11 @@ public class RobotStudent extends Student {
 		this.algorithm = algorithm;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("%s\t%s\t%4d単位\t&s\t%s", getId(), getName(), getCredit(),getVendor(),getAlgorithm());
+	}
+
 
 
 }

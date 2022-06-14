@@ -13,6 +13,11 @@ public class RegularStudent extends Student {
 	public void explain() {
 		System.out.println("私" + getName() + "は，正規の学生です．");
 	}
+	@Override
+	public String toString() {
+		return String.format("%s\t%s\t%4d単位", getId(), getName(), getCredit());
+		
+	}
 
 	
 }

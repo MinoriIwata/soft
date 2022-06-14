@@ -28,4 +28,9 @@ public class WorkingStudent extends Student {
 		this.company = company;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("%s\t%s\t%4d単位\t%s", getId(), getName(), getCredit(),getCompany());
+	}
+
 }

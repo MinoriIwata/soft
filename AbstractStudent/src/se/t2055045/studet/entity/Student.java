@@ -1,13 +1,23 @@
 package se.t2055045.studet.entity;
+/**
+ * 「学生たるもの」を表す抽象クラス．学番，名前，単位数を持つ．あらゆる種類の学生はこのクラスを継承すること．
+ *
+ * @author Minori Iwata
+ * @version 1.0, 2022-6-14
+ * @since JDK1.8
+ * @see <a href="http://www27.cs.kobe-u.ac.jp/~masa-n/lecure/newse/07/index.html">ソフトウェア工学第7回</a>
+ */
 public abstract class Student {
-	/*------ 学生の状態を決めるフィールド群 -----*/
-	// フィールドはprivateにする．
-	protected String id; // 学籍番号
-	protected String name; // 名前
-	protected int credit; // 単位数
+	
+	/** 学籍番号 */
+	protected String id; 
+	/** 名前 */
+	protected String name;
+	/** 単位数 */
+	protected int credit; 
 
-	/* 静的フィールド．全インスタンスで共通 */
-	private static final int REQUIREMENT_OF_GRADUATION = 130; // 卒業要件単位数
+	/** 卒業要件単位数 */
+	private static final int REQUIREMENT_OF_GRADUATION = 130; 
 
 	/**
 	 * デフォルトコンストラクタ．空の学生オブジェクトを作る
@@ -17,7 +27,14 @@ public abstract class Student {
 	}
 
 	/**
-	 * コンストラクタ．学番，名前，単位数を指定して，学生インスタンスを生成する．
+	 * 学籍番号，名前，単位数を指定して，学生インスタンスを生成する．
+	 *
+	 * @param id
+	 *            学籍番号
+	 * @param name
+	 *            名前
+	 * @param credit
+	 *            単位数
 	 */
 	public Student(String id, String name, int credit) {
 		// 無効な値に備えて，setterを呼び出す．
@@ -27,13 +44,17 @@ public abstract class Student {
 	}
 
 	/*------------------ 主要な学生の振る舞い ---------------------*/
-	/** (1) 自己紹介をする */
+	/**
+	 * 自己紹介をする
+	 */
 	public final void hello() {
 		System.out.println("こんにちは．学籍番号" + id + "の" + name + "です．" + "よろしくお願いします．");
 		explain();
 	}
 
-	/** (2) 卒業報告をする */
+	/**
+	 * 卒業報告をする
+	 */
 	public final void graduate() {
 		System.out.print(name + "の単位数は，" + credit + "です．");
 		if (credit >= REQUIREMENT_OF_GRADUATION) {
@@ -43,31 +64,46 @@ public abstract class Student {
 		}
 	}
 
-	/** (3) 単位数を追加する */
+	/**
+	 * 単位数を追加する
+	 *
+	 * @param amount
+	 *            追加する単位数
+	 */
 	public final void addCredit(int amount) {
 		System.out.println(name + "の単位数を " + amount + "追加します．");
 		credit = credit + amount;
 	}
-
+	
+	/**
+	 * 学生の身分を説明する抽象メソッド．具体的な実装はサブクラスに任せる．
+	 */
 	public abstract void explain();
 	/* --------------- 以下，アクセサ (getter/setter)----------- */
 
 	/**
-	 * 卒業要件単位数を取得する（getterの命名法に伴って，メソッド名変更） (REQUIREMENT_OF_GRADUATIONのgetter)
+	 * 卒業要件単位数を取得する
+	 *
+	 * @return 卒業要件単位数
 	 */
 	public static int getRequirementOfGraduation() {
 		return REQUIREMENT_OF_GRADUATION;
 	}
 
 	/**
-	 * 学籍番号を取得する． (フィールドidのgetter)
+	 * 学籍番号を取得する
+	 *
+	 * @return 学籍番号
 	 */
 	public String getId() {
 		return id;
 	}
 
 	/**
-	 * 学籍番号をセットする．空文字列の場合には，"99999999X"をセットする． (フィールドidのsetter)
+	 * 学籍番号をセットする．空文字列の場合には，"99999999X"をセットする
+	 *
+	 * @param id  
+	 *           学籍番号
 	 */
 	public void setId(String id) {
 		if (id.equals("") || id == null) {
@@ -79,14 +115,19 @@ public abstract class Student {
 	}
 
 	/**
-	 * 名前を取得する(フィールドnameのgetter)
+	 * 名前を取得する
+	 *
+	 * @return 名前
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * 名前をセットする．空文字列の場合には，"名無し"をセットする． (フィールドnameのsetter)
+	 * 名前をセットする．空文字列の場合には，"名無し"をセットする．
+	 *
+	 * @param name
+	 *            名前
 	 */
 	public void setName(String name) {
 		if (name.equals("") || name == null) {
@@ -98,7 +139,9 @@ public abstract class Student {
 	}
 
 	/**
-	 * 単位数を取得する（フィールドcreditのgetter）
+	 * 単位数を取得する
+	 *
+	 * @return 単位数
 	 */
 	public int getCredit() {
 		return credit;
@@ -106,6 +149,9 @@ public abstract class Student {
 
 	/**
 	 * 単位数をセットする．負の場合は0に補正する．
+	 *
+	 * @param credit
+	 *            単位数
 	 */
 	public void setCredit(int credit) {
 		if (credit < 0) {
@@ -119,10 +165,8 @@ public abstract class Student {
 	/**
 	 * 文字列表現． "12345678X(タブ)中村(タブ)146単位"のような感じで表現する
 	 */
-	@Override
-	public String toString() {
-		// String.format() はSystem.out.printf()とほぼ同じだが文字列として返すメソッド．
-		return String.format("%s\t%s\t%4d単位", getId(), getName(), getCredit());
-	}
+	
+	public abstract String toString() ;
+		
 
 }
