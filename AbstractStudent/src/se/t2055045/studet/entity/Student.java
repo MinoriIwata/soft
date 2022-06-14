@@ -5,7 +5,6 @@ package se.t2055045.studet.entity;
  * @author Minori Iwata
  * @version 1.0, 2022-6-14
  * @since JDK1.8
- * @see <a href="http://www27.cs.kobe-u.ac.jp/~masa-n/lecure/newse/07/index.html">ソフトウェア工学第7回</a>
  */
 public abstract class Student {
 	

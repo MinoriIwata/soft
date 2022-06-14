@@ -17,6 +17,14 @@ import se.t2055045.studet.entity.WorkingStudent;
 
 public class StudentMapFactory {
 
+	/**
+	 * ファイルの名前を指定して、データをコンマ区切りでMapに読み込む
+	 *
+	 * @param filename
+	 *            学籍番号
+	 * @return TreeMap
+	 *              学生のデータが入ったマップ
+	 */
 	public static TreeMap<String, Student> create(String filename) {
 		TreeMap<String, Student> map = new TreeMap<String, Student>();
 		try {
@@ -33,6 +41,7 @@ public class StudentMapFactory {
 				case 0:
 					RegularStudent target = new RegularStudent(id, name, credit);
 					map.put(id, target);
+					break;
 
 				case 1:
 					String country = data[4];
@@ -46,17 +55,23 @@ public class StudentMapFactory {
 					InternationalStudent inter = new InternationalStudent(id, name, credit, country, kokuhi);
 
 					map.put(id, inter);
+					break;
 
 				case 2:
 					String company = data[4];
 					WorkingStudent emp = new WorkingStudent(id, name, credit, company);
 
 					map.put(id, emp);
+					break;
 				case 3:
 					String vender = data[4];
 					String algo = data[5];
 					RobotStudent robot = new RobotStudent(id, name, credit, vender, algo);
 					map.put(id, robot);
+					break;
+
+				default:
+					break;
 
 				}
 
@@ -77,6 +92,14 @@ public class StudentMapFactory {
 
 	}
 
+	/**
+	 * ファイルの名前を指定して、学生のデータをコンマ区切りで書き込む
+	 *
+	 * @param map 
+	 *           学生のデータが入ったマップ
+	 * @param filename
+	 *            書き込むファイルの名前
+	 */
 	public static void store(TreeMap<String, Student> map, String fileName) {
 		PrintWriter pw = null;
 		try {
@@ -87,21 +110,26 @@ public class StudentMapFactory {
 
 				if (s instanceof RegularStudent) { // 正規学生の時
 					RegularStudent rs = (RegularStudent) s; // ダウンキャスト
-					String line = rs.getId() + c + rs.getName() + c + rs.getCredit() + c + "0";
+					String line = rs.getId() + c + rs.getName() + c + rs.getCredit() + c + "0" + c + c;
 					pw.println(line);
 				} else if (s instanceof InternationalStudent) { // 留学生の時，
 					InternationalStudent is = (InternationalStudent) s; // ダウンキャスト
+					int d = 0;
+					if (is.getKokuhi() == true) {
+						d = 1;
+					}
 					String line = is.getId() + c + is.getName() + c + is.getCredit() + c + "1" + c + is.getCountry() + c
-							+ is.getKokuhi();
+							+ d;
 					pw.println(line);
 				} else if (s instanceof WorkingStudent) {
-					WorkingStudent ws=(WorkingStudent)s;
-					String line=ws.getId()+c+ws.getName()+c+ws.getCredit()+c+"2"+c+ws.getCompany();
+					WorkingStudent ws = (WorkingStudent) s;
+					String line = ws.getId() + c + ws.getName() + c + ws.getCredit() + c + "2" + c + ws.getCompany()+c;
 					pw.println(line);
 
 				} else if (s instanceof RobotStudent) {
-					RobotStudent rs=(RobotStudent)s;
-					String line=rs.getId()+c+rs.getName()+c+rs.getCredit()+c+"3"+c+rs.getVendor()+c+rs.getAlgorithm();
+					RobotStudent rs = (RobotStudent) s;
+					String line = rs.getId() + c + rs.getName() + c + rs.getCredit() + c + "3" + c + rs.getVendor() + c
+							+ rs.getAlgorithm();
 					pw.println(line);
 
 				}
