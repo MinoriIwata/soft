@@ -163,9 +163,8 @@ public abstract class Student {
 	}
 
 	/**
-	 * 文字列表現． "12345678X(タブ)中村(タブ)146単位"のような感じで表現する
+	 * 学生の文字列表現を返す抽象メソッド．具体的な実装はサブクラスに任せる．
 	 */
-	
 	public abstract String toString() ;
 		
 
