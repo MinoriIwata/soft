@@ -1,3 +1,4 @@
+package se.t2055045.studet.entity;
 public class RegularStudent extends Student {
 	/* -------     コンストラクタ-------------------*/
 	public RegularStudent(){

@@ -1,4 +1,4 @@
-
+package se.t2055045.studet.entity;
 public class InternationalStudent extends Student {
 
 	private String country;

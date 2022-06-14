@@ -1,3 +1,4 @@
+package se.t2055045.studet.entity;
 public abstract class Student {
 	/*------ 学生の状態を決めるフィールド群 -----*/
 	// フィールドはprivateにする．

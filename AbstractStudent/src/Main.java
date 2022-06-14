@@ -1,3 +1,7 @@
+import se.t2055045.studet.entity.InternationalStudent;
+import se.t2055045.studet.entity.RegularStudent;
+import se.t2055045.studet.entity.RobotStudent;
+import se.t2055045.studet.entity.WorkingStudent;
 
 public class Main {
 	public static void main(String[] args) {
