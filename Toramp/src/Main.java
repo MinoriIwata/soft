@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+import se.t2055405.card.entity.Card;
+import se.t2055405.card.entity.CardDeck;
+
 public class Main {
 
 	ArrayList<Card> cards=new ArrayList<Card>() ;

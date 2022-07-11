@@ -1,3 +1,4 @@
+package se.t2055405.card.entity;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
