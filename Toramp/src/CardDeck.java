@@ -59,13 +59,23 @@ public class CardDeck {
 	
 	public Card seeCard(int i)
 	{
-		return null;
+		Card take=cards.get(i-1);
+		return take;
 		
 	}
 	
 	public int searchCard(int suit,int number)
 	{
-		return number;
+		Card target=new Card(suit,number);
+		int search=cards.indexOf(target);
+		if(search>=0)
+		{
+			return search+1;
+		}
+		else
+		{
+			return 0;
+		}
 		
 	}
 	
