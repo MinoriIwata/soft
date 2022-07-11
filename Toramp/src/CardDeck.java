@@ -43,13 +43,17 @@ public class CardDeck {
 	}
 	
 	public Card takeCard() {
-		return null;
+		Card take=cards.get(0);
+		cards.remove(0);
+		return take;
 		
 	}
 	
 	public Card takeCard(int i)
 	{
-		return null;
+		Card take=cards.get(i-1);
+		cards.remove(i-1);
+		return take;
 		
 	}
 	
