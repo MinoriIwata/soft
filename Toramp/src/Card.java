@@ -1,4 +1,11 @@
-
+/**
+ * トランプのカードの機能を表すクラス
+ * 
+ * @author Minori Iwata
+ * @version 0.1 2022-07-09
+ * @since JDK1.8
+ *
+ */
 public class Card {
 	/** スート */
 	private int suit;
@@ -82,30 +89,37 @@ public class Card {
 		switch (suit) {
 		case 0:
 			su = "スペード";
+			break;
 		case 1:
 			su = "ダイヤ";
-
+            break;
 		case 2:
 			su = "ハート";
-
+            break;
 		case 3:
 			su = "クラブ";
-
+            break;
 		default:
 			su = "スート判別不可";
+			break;
 		}
 
 		switch (number) {
 		case 1:
 			num = "A";
+			break;
 		case 11:
 			num = "J";
+			break;
 		case 12:
 			num = "Q";
+			break;
 		case 13:
 			num = "K";
+			break;
 		default:
 			num = Integer.toString(number);
+			break;
 		}
 
 		if (suit == 0 && number == -1) {
@@ -118,41 +132,6 @@ public class Card {
 	/**カード情報を文字列表現に変換する.*/
 	@Override
 	public String toString() {
-		String su, num;
-
-		switch (suit) {
-		case 0:
-			su = "スペード";
-		case 1:
-			su = "ダイヤ";
-
-		case 2:
-			su = "ハート";
-
-		case 3:
-			su = "クラブ";
-
-		default:
-			su = "スート判別不可";
-		}
-
-		switch (number) {
-		case 1:
-			num = "A";
-		case 11:
-			num = "J";
-		case 12:
-			num = "Q";
-		case 13:
-			num = "K";
-		default:
-			num = Integer.toString(number);
-		}
-
-		if (suit == 0 && number == -1) {
-			return "ジョーカー";
-		}
-		return su + num;
+		return getString(suit,number); 
 	}
-
 }
