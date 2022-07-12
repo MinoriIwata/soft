@@ -45,7 +45,7 @@ public class Card {
 	 * スペード→ダイヤ→ハート→クラブの1~13を、この順番で0から51までの通し番号をつける.
 	 * ジョーカーは-1である.
 	 */
-	public int tolndex() {
+	public int toIndex() {
 		int t = (this.suit * 13) + this.number - 1;
 		if (t < 0) {
 			return -1;
@@ -87,7 +87,14 @@ public class Card {
 	public static String getString(int suit, int number) {
 		String su, num;
 
+		if (suit == -1 && number == 0) {
+			return "ジョーカー";
+		}
+		
 		switch (suit) {
+		case -1:
+			su = "ジョーカー";
+			break;
 		case 0:
 			su = "スペード";
 			break;
@@ -123,9 +130,7 @@ public class Card {
 			break;
 		}
 
-		if (suit == 0 && number == -1) {
-			return "ジョーカー";
-		}
+		
 		return su + num;
 
 	}
