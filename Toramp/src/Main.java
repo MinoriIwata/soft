@@ -29,12 +29,18 @@ public class Main {
 	 System.out.println("3枚目は"+take.toString());
 	 System.out.println("------ 現在の山を表示します．-------");
 	 ls.deck.showAllCards();
+	 System.out.println("------ 現在の山を表示します．-------");
+	 Card diamond10 = new Card(1, 10); 
+	 ls.deck.addCard(1, diamond10);
+	 ls.deck.addCard(4, diamond10);
+	 ls.deck.showAllCards();
 	 ls.deck.clear();
 	 boolean d=ls.deck.isEmpty();
 	 if(d==true)
 	 {
 		 System.out.println("消せたよ！");
 	 }
+	 ls.deck.showAllCards();
 	}
 	
 }

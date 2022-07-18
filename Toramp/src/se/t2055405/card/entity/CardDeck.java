@@ -35,10 +35,11 @@ public class CardDeck {
 	public void createFullDeck() {
 
 		System.out.println("フルデッキを生成します.");
+		Card newcard ;
 		
 		for (int i = 0; i < 4; ++i) {
 			for (int j = 1; j < 14; ++j) {
-				Card newcard = new Card(i, j);
+				 newcard = new Card(i, j);
 				cards.add(newcard);
 			}
 		}
@@ -70,7 +71,7 @@ public class CardDeck {
 	 * @param card 追加するカード
 	 */
 	public void addCard(int i, Card card) {
-		cards.add(i - 1, card);
+		cards.add(i-1, card);
 	}
 
 	/**
