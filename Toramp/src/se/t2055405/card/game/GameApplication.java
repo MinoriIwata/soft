@@ -1,5 +1,8 @@
 package se.t2055405.card.game;
 
-public class GameApplication {
+import se.t2055405.card.entity.Card;
 
+public class GameApplication {
+ 
+	Card tro;
 }
