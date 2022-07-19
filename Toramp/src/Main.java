@@ -33,6 +33,10 @@ public class Main {
 	 Card diamond10 = new Card(1, 10); 
 	 ls.deck.addCard(1, diamond10);
 	 ls.deck.addCard(4, diamond10);
+	 int search=ls.deck.searchCard(1, 10);
+	 System.out.println("--------------"+search+"------");
+	 
+	 
 	 ls.deck.showAllCards();
 	 ls.deck.clear();
 	 boolean d=ls.deck.isEmpty();
