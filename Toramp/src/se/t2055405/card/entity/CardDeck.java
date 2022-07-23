@@ -129,7 +129,12 @@ public class CardDeck {
 		}
 
 	}
-
+	/**
+	 * 番号を与えて、その番号と同じ番号のカードがデッキの何番目にあるかを調べる。デッキにそのカードが無ければ0を返す.
+	 *
+	 * @param number 番号
+	 * @return search カードがある場所
+	 */
 	public int searchCard(int number) {
 		
 		int t = -1;

@@ -8,5 +8,13 @@ public class CpuPlayer extends Player{
 	public CpuPlayer(String name) {
 		this.setName(name);
 	}
+ 
+	@Override
+	public int choiseTrump() {
+		
+		
+		return 0;
+		
+	}
 
 }

@@ -5,14 +5,14 @@ import se.t2055405.card.game.KeyBoard;
 public class Player {
 	private String name;
 	private CardDeck deck;
-	
-	public Player(){
-		
+
+	public Player() {
+
 	}
-	
-	public Player(String name,CardDeck deck) {
-		this.name=name;
-		this.deck=deck;
+
+	public Player(String name, CardDeck deck) {
+		this.name = name;
+		this.deck = deck;
 	}
 
 	public String getName() {
@@ -31,38 +31,61 @@ public class Player {
 		this.deck = deck;
 	}
 
-	public int choiseTramp() {
+	public int choiseCard() {
 
 		int choise = KeyBoard.inputNumber();
 		return choise;
 
 	}
 
-	
-	public void showTramp() {
+	public void showCard() {
 
 		deck.showAllCards();
 	}
+	
+	public int checkNumber() {
+		int num=deck.size();
+		return num;
+	}
+	
+	public void addCard(Card add) {
+		deck.addCard(add);
+	}
+	
+	public Card takeCard(int i) {
+		Card target=deck.takeCard(i);
+		return target;
+	}
 
-	public void checkTramp() {
+	public void checkCard() {
 		int size = deck.size();
 		
-		for(int i=0;i<size-1;i++)
-		{
-			for(int j=i+1;j<size;j++) {
-				Card taget=deck.seeCard(i);
-				
+		for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size; j++) {
+					int check = deck.searchCard(deck.seeCard(i).getNumber());
+					if (check >= 0) {
+						deck.takeCard(check);
+						deck.takeCard(i);
+						size = deck.size();
+						i--;
+						break;
+
+					}
+				}
+
 			}
 		}
 
-	}
+	
 
-	public void checkTramp(Card input) {
+	public void checkCard(Card input) {
 
 		int check = deck.searchCard(input.getNumber());
 
 		if (check >= 0) {
-
+			deck.takeCard(check);
+		} else {
+			deck.addCard(input);
 		}
 
 	}
