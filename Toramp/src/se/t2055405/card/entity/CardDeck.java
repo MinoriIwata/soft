@@ -1,4 +1,5 @@
 package se.t2055405.card.entity;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,11 +36,11 @@ public class CardDeck {
 	public void createFullDeck() {
 
 		System.out.println("フルデッキを生成します.");
-		Card newcard ;
-		
+		Card newcard;
+
 		for (int i = 0; i < 4; ++i) {
 			for (int j = 1; j < 14; ++j) {
-				 newcard = new Card(i, j);
+				newcard = new Card(i, j);
 				cards.add(newcard);
 			}
 		}
@@ -71,7 +72,7 @@ public class CardDeck {
 	 * @param card 追加するカード
 	 */
 	public void addCard(int i, Card card) {
-		cards.add(i-1, card);
+		cards.add(i - 1, card);
 	}
 
 	/**
@@ -126,6 +127,22 @@ public class CardDeck {
 		} else {
 			return 0;
 		}
+
+	}
+
+	public int searchCard(int number) {
+		
+		int t = -1;
+
+		for (Card target : cards) {
+			t++;
+			if (target.getNumber() == number) {
+				
+				return t;
+			}
+		}
+
+		return -1;
 
 	}
 
