@@ -9,7 +9,7 @@ import se.t2055405.card.entity.Player;
  * ババ抜きゲームの機能を管理するクラス
  * 
  * @author Minori Iwata
- * @version 0.1 2022-07-09
+ * @version 0.1 2022-07-24
  * @since JDK1.8
  *
  */
