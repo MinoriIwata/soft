@@ -59,7 +59,9 @@ public class Winner {
 
 	}
 
-	
+	/**
+	 * 勝者リストを消去する
+	 */
 	public void clear()
 	{
 		winner.clear();

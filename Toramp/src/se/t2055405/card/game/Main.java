@@ -1,27 +1,14 @@
 package se.t2055405.card.game;
 
-import java.util.ArrayList;
-
-import se.t2055405.card.entity.Card;
-import se.t2055405.card.entity.CardDeck;
-import se.t2055405.card.entity.Player;
-import se.t2055405.card.entity.PlayerList;
-import se.t2055405.card.entity.Winner;
-
 public class Main {
-	ArrayList<Player> m=new ArrayList<Player>();
-	ArrayList<Player> s=new ArrayList<Player>();
-	ArrayList<Card> c=new ArrayList<Card>();
-	CardDeck deck=new CardDeck(c);
-	int num;
-	Winner win=new Winner(s);
-	PlayerList ls=new PlayerList(m,num,win);
-	GameApplication app=new GameApplication(ls,deck);
-	Game game=new Game(app);
+	
+	Game game=new Game();
 	
 	public static void main(String[] args) {
 		
 		Main ls=new Main();
+		GameApplication g=ls.game.set();
+		ls.game=new Game(g);
 		
 		System.out.println("ようこそ！ババ抜きシステムへ。メニューを表示します");
 		int i=ls.game.menu();

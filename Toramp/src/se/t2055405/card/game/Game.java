@@ -5,18 +5,59 @@ import java.util.ArrayList;
 import se.t2055405.card.entity.Card;
 import se.t2055405.card.entity.CardDeck;
 import se.t2055405.card.entity.Player;
+import se.t2055405.card.entity.PlayerList;
+import se.t2055405.card.entity.Winner;
 
+/**
+ * ババ抜きを動かすクラス
+ * 
+ * @author Minori Iwata
+ * @version 0.1 2022-07-09
+ * @since JDK1.8
+ *
+ */
 public class Game {
+	/** ババ抜きアプリ */
 	private GameApplication app;
 
+	/** 空のデフォルトコンストラクタ */
 	public Game() {
 
 	}
 
+	/**
+	 * クラス宣言
+	 * 
+	 * @param app ババ抜きアプリ
+	 */
 	public Game(GameApplication app) {
 		this.app = app;
 	}
 
+	/**
+	 * 必要な宣言を纏めて行う
+	 * 
+	 * @return app ババ抜きアプリクラス
+	 */
+
+	public GameApplication set() {
+		ArrayList<Player> m = new ArrayList<Player>();
+		ArrayList<Player> s = new ArrayList<Player>();
+		ArrayList<Card> c = new ArrayList<Card>();
+		CardDeck deck = new CardDeck(c);
+		int num = 0;
+		Winner win = new Winner(s);
+		PlayerList ls = new PlayerList(m, num, win);
+		GameApplication app = new GameApplication(ls, deck);
+
+		return app;
+	}
+
+	/**
+	 * ユーザー登録を行う
+	 * 
+	 * @return user プレイヤーとして参加するユーザー
+	 */
 	public Player userin() {
 		System.out.println("ババ抜きを始めます.ユーザー登録を行います\n名前を教えてください");
 		String name = KeyBoard.inputString();
@@ -26,11 +67,22 @@ public class Game {
 		return user;
 	}
 
+	/**
+	 * ババ抜きのメニュー
+	 * 
+	 * @return t メニュー選択
+	 */
 	public int menu() {
 		System.out.println("1.ババ抜きを開始する　2.システムを終了する");
 		int t = KeyBoard.inputNumber();
 		return t;
 	}
+
+	/**
+	 * 何人で遊ぶかを尋ねるクラス
+	 * 
+	 * @return t 参加者数
+	 */
 
 	public int playNumber() {
 		System.out.println("今回は何名でゲームを始めますか？(自分自身も含めた数をお答えください)");
@@ -38,6 +90,9 @@ public class Game {
 		return t;
 	}
 
+	/**
+	 * ババ抜きを始めるための事前準備をするクラス
+	 */
 	public void initalize() {
 		Player user = userin();
 		int i = playNumber();
@@ -55,6 +110,9 @@ public class Game {
 		}
 	}
 
+	/**
+	 * ババ抜きをするクラス
+	 */
 	public void babanuki() {
 
 		System.out.println("ババ抜きを始めます,スタートプレイヤーは" + app.getLs().getPlayers().get(0).getName() + "さんです");
@@ -73,10 +131,20 @@ public class Game {
 
 	}
 
+	/**
+	 * ババ抜きアプリを取得するクラス
+	 * 
+	 * @return app ババ抜きアプリ
+	 */
 	public GameApplication getApp() {
 		return app;
 	}
 
+	/**
+	 * ババ抜きアプリをセットするクラス
+	 * 
+	 * @param app ババ抜きアプリ
+	 */
 	public void setApp(GameApplication app) {
 		this.app = app;
 	}

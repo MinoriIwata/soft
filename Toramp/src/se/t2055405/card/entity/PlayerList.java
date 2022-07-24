@@ -93,8 +93,7 @@ public class PlayerList {
 	/**
 	 * 対象者の手持ちが0でないかどうかチェックする,0であれば勝者リストに表示する
 	 * 
-	 * @param target
-	 *         対象となるプレイヤー
+	 * @param target 対象となるプレイヤー
 	 */
 	public void checkPlayer(Player target) {
 		int t = target.deckSize();
@@ -132,6 +131,11 @@ public class PlayerList {
 		return t;
 	}
 
+	/**
+	 * 対象者がリストの何番目にいるか
+	 * 
+	 * @param a 対象となるプレイヤー
+	 */
 	public int searchPerson(Player a) {
 
 		int search = players.indexOf(a);
@@ -163,24 +167,59 @@ public class PlayerList {
 	}
 	// setter getter
 
+	/**
+	 * 参加者リストを取得する
+	 * 
+	 * @return players
+	 *          参加者リスト
+	 */
 	public ArrayList<Player> getPlayers() {
 		return players;
 	}
 
+	/**
+	 * 参加者リストをセットする
+	 * 
+	 * @param players 参加者リスト
+	 */
 	public void setPlayers(ArrayList<Player> players) {
 		this.players = players;
 	}
 
+	/**
+	 * 参加者数を取得する
+	 * @return playerNumber
+	 *         参加者数
+	 */
 	public int getPlayerNumber() {
 		return playerNumber;
 	}
 
+	/**
+	 * 参加者リストをセットする
+	 * 
+	 * @param playerNumber 参加者数
+	 */
 	public void setPlayerNumber(int playerNumber) {
 		this.playerNumber = playerNumber;
 	}
 
+	/**
+	 * 勝者リストを取得する
+	 * @return winner
+	 *          勝者リスト
+	 */
 	public Winner getWinner() {
 		return winner;
+	}
+
+	/**
+	 * 勝者リストをセットする
+	 * @param winner
+	 *          勝者リスト      
+	 */
+	public void setWinner(Winner winner) {
+		this.winner = winner;
 	}
 
 }
