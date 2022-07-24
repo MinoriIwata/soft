@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"se.t2055405.card.entity"},{"l":"se.t2055405.card.game"},{"l":"se.t2055405.card.test"},{"l":"すべてのパッケージ","u":"allpackages-index.html"}];updateSearchResults();

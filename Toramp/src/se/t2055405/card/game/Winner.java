@@ -15,7 +15,7 @@ public class Winner {
 	/**勝者リスト*/
 	private ArrayList<Player> winner;
 
-	/*
+	/**
 	 * 空のデフォルトコンストラクタ
 	 */
 	public Winner() {

@@ -36,6 +36,7 @@ public class PlayerList {
 	 * 
 	 * @param players プレイヤーリスト
 	 * @param num     参加者数
+	 * @param win   勝者リスト
 	 */
 	public PlayerList(ArrayList<Player> players, int num, Winner win) {
 		this.players = players;
@@ -74,9 +75,11 @@ public class PlayerList {
 
 	/**
 	 * 対象者の手持ちにカードを追加
+	 * @param target 
+	 *         プレイヤー
+	 * @param add     
+	 *         追加されるカード
 	 * 
-	 * @param tareget プレイヤー
-	 * @param add     追加されるカード
 	 */
 	public void addCard(Player target, Card add) {
 		target.addCard(add);
@@ -85,9 +88,12 @@ public class PlayerList {
 
 	/**
 	 * 対象者の手持ちにカードを取得
-	 * 
-	 * @param tareget プレイヤー
-	 * @param t       抜かれるカードの場所
+	 * @param target 
+	 *         プレイヤー
+	 * @param t      
+	 *         抜かれるカードの場所
+	 * @return take
+	 *          取ったカード
 	 */
 	public Card takeCard(Player target, int t) {
 		Card take = target.takeCard(t);
@@ -116,7 +122,10 @@ public class PlayerList {
 	/**
 	 * 対象者をプレイヤーリストから外す
 	 * 
-	 * @param i 対象となるプレイヤーの番号
+	 * @param i 
+	 *        対象となるプレイヤーの番号
+	 * @return target
+	 *          対象となったプレイヤー
 	 */
 	public Player takePlayer(int i) {
 		Player target = players.get(i);
@@ -128,7 +137,10 @@ public class PlayerList {
 	/**
 	 * 対象者の手持ちの枚数
 	 * 
-	 * @param i 対象となるプレイヤーの番号
+	 * @param i 
+	 *       対象となるプレイヤーの番号
+	 * @return  t
+	 *        手持ちの枚数
 	 */
 
 	public int deckNumber(int i) {
@@ -140,6 +152,9 @@ public class PlayerList {
 	 * 対象者がリストの何番目にいるか
 	 * 
 	 * @param a 対象となるプレイヤー
+	 * 
+	 * @return search
+	 *         対象がいる場所
 	 */
 	public int searchPerson(Player a) {
 

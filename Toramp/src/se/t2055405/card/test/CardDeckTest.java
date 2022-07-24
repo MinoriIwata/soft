@@ -33,21 +33,26 @@ public class CardDeckTest extends TestCase {
 	protected void tearDown() throws Exception {
 		// 後処理は特に無し
 	}
-	
+	/**
+	 * createFullDeck()のテスト
+	 */
 	public void testCreateFullDeck() {
 		test.createFullDeck();
 		assertNotNull(test);
 		assertEquals(52, test.size());
 		
 	}
-	
+	/**
+	 * shuffle()のテスト
+	 */
 	public void testShuffle() {
 	 test.createFullDeck();
 	 test2.createFullDeck();
 	 test.shuffle();
-	 //assertNotEquals(test,test2);//
 	}
-	
+	/**
+	 * addCard()のテスト
+	 */
 	public void testAddCard() {
 		test.createFullDeck();
 		test.addCard(joker);
@@ -56,6 +61,13 @@ public class CardDeckTest extends TestCase {
 		
 		
 	}
+	/**
+	 * addCard(inti,Card card)のテスト
+	 * @param i
+	 *        差し込む場所
+	 * @param card
+	 *         入れるカード
+	 */
 	public void testAddCard(int i,Card card) {
 		test.createFullDeck();
 		test.addCard(0,diamond10);
@@ -63,7 +75,9 @@ public class CardDeckTest extends TestCase {
 		assertEquals(54, test.size());
 	
 	}
-	
+	/**
+	 * takeCard()のテスト
+	 */
 	public void testTakeCard() {
 		test.createFullDeck();
 		
@@ -74,7 +88,9 @@ public class CardDeckTest extends TestCase {
 		
 	}
 	
-	
+	/**
+	 * seeCard()のテスト
+	 */
 	public void testSeeCard() {
 		test.createFullDeck();
 
@@ -82,6 +98,13 @@ public class CardDeckTest extends TestCase {
 		assertEquals(26,test.seeCard(27).toIndex());
 		assertEquals(52, test.size());
 	}
+	/**
+	 * searchCard(int suit,int number)のテスト
+	 * @param suit
+	 *         スート
+	 * @param number
+	 *          番号
+	 */
 	public void testSearchCard(int suit,int number) {
 		test.createFullDeck();
         int i=test.searchCard(0, 1);
@@ -89,13 +112,17 @@ public class CardDeckTest extends TestCase {
         int t=test.searchCard(-1, 0);
         assertEquals(0,t);
 	}
-	
+	/**
+	 * isEmpty()のテスト
+	 */
 	public void testIsEmpty() {
 		assertTrue(test.isEmpty());
 		test.createFullDeck();
 		assertFalse(test.isEmpty());
 	}
-	
+	/**
+	 * size()のテスト
+	 */
     public void testSize() {
 		int size=test.size();
 		assertSame(0,size);
@@ -103,7 +130,10 @@ public class CardDeckTest extends TestCase {
 		size=test.size();
 		assertSame(52,size);
 	}
-		
+	
+    /**
+     * showAllCards()のテスト
+     */
     public void testShowAllCards() {
 
 		test.showAllCards();
@@ -112,7 +142,10 @@ public class CardDeckTest extends TestCase {
 		 System.out.println("------------------------------");
 		test.showAllCards();
    	}
-		
+	
+    /**
+     * getAllCards()のテスト
+     */
     public void testGetAllCards() {
     	
 

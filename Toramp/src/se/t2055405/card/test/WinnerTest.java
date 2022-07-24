@@ -18,6 +18,10 @@ public class WinnerTest extends TestCase {
 	private Player a, b, c;
 	Winner win;
 	ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+	/**
+	 * 各テストメソッドの実行の前処理
+	 */
 	protected void setUp() throws Exception {
 		super.setUp();
 		ArrayList<Player> winner = new ArrayList<Player>();
@@ -34,10 +38,16 @@ public class WinnerTest extends TestCase {
 		c = new Player("test3", deck3);
 	}
 
+	/**
+	 * 各テストメソッドの実行の後処理
+	 */
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
 
+	/**
+	 * addWinner()のテスト
+	 */
 	public void testAddWinner() {
 		win.addWinner(a);
 		assertEquals(1, win.getWinner().size());
@@ -46,19 +56,29 @@ public class WinnerTest extends TestCase {
 		assertEquals(3, win.getWinner().size());
 	}
 
-
-
+	/**
+	 * showWinner()のテスト
+	 */
 	public void testShowWinner() {
 		win.addWinner(b);
-		assretThat(out.toString(),is("1位:test2"+ System.lineSeparator()));
-		
+		assretThat(out.toString(), is("1位:test2" + System.lineSeparator()));
+
 	}
 
+	/**
+	 * 自動生成されたメソッド
+	 * 
+	 * @param string
+	 * @param matcher
+	 */
 	private void assretThat(String string, Matcher<String> matcher) {
 		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
 
+	/**
+	 * clear()のテスト
+	 */
 	public void testClear() {
 		win.addWinner(a);
 		win.addWinner(b);

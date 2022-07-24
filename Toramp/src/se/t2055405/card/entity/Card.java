@@ -31,11 +31,19 @@ public class Card {
 		this.number = number;
 	}
 
-	/**スートを取得する */
+	/**
+	 * スートを取得する 
+	 *@return suit
+	 *        スート 
+	 */
 	public int getSuit() {
 		return suit;
 	}
-	/**数字を取得する */
+	/**
+	 * 数字を取得する 
+	 * @return number
+	 *          数字
+	 */
 	public int getNumber() {
 		return number;
 	}
@@ -44,6 +52,8 @@ public class Card {
 	 * カード情報を整数表現に変換する.
 	 * スペード→ダイヤ→ハート→クラブの1~13を、この順番で0から51までの通し番号をつける.
 	 * ジョーカーは-1である.
+	 * @return t
+	 *          カード情報
 	 */
 	public int toIndex() {
 		int t = (this.suit * 13) + this.number - 1;
@@ -54,7 +64,10 @@ public class Card {
 		}
 	}
 	
-	/**カード情報を画面に出力する.*/
+	/**
+	 * カード情報を画面に出力する.
+	 *
+	 */
 	public void show() {
 
 		String carddata = this.toString();
@@ -67,6 +80,9 @@ public class Card {
 	 * 
 	 * @param suit   スート
 	 * @param number 番号
+	 * 
+	 * @return t
+	 *         カード情報の整数表現
 	 */
 	public static int getIndex(int suit, int number) {
 		int t = (suit * 13) + number - 1;
@@ -83,6 +99,9 @@ public class Card {
 	 * 
 	 * @param suit   スート
 	 * @param number 番号
+	 * 
+	 * @return su+num
+	 *          カードの文字列表現
 	 */
 	public static String getString(int suit, int number) {
 		String su, num;
@@ -135,7 +154,11 @@ public class Card {
 
 	}
 
-	/**カード情報を文字列表現に変換する.*/
+	/**
+	 * カード情報を文字列表現に変換する.
+	 *@return string
+	 *         カード情報 
+	 */
 	@Override
 	public String toString() {
 		return getString(suit,number); 
