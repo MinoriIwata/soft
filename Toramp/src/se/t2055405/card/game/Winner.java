@@ -42,12 +42,6 @@ public class Winner {
 		winner.add(a);
 	}
 
-	/**
-	 * リストをクリアする
-	 * */
-	public void deleteWinner() {
-		winner.clear();
-	}
 
 	/**
 	 * リストを上から順番に表示する
