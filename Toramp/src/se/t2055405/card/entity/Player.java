@@ -46,22 +46,19 @@ public class Player {
 		return size;
 	}
 
-	
-	
 	public void checkCard() {
 		int size = deck.size();
 
 		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {
-				int check = deck.searchCard(deck.seeCard(i).getNumber());
-				if (check >= 0) {
-					deck.takeCard(check);
-					deck.takeCard(i);
-					size = deck.size();
-					i--;
-					break;
+			int check = deck.searchCard(deck.seeCard(i + 1).getNumber());
+			if (check >= 0 && check != i) {
+				deck.takeCard(check + 1);
+				deck.takeCard(i );
+				size = deck.size();
+				deck.showAllCards();
+				System.out.println("----------------------------");
+				i = i - 1;
 
-				}
 			}
 
 		}
@@ -73,16 +70,15 @@ public class Player {
 
 		if (check >= 0) {
 			System.out.println("一致するカードがありました！");
-			deck.takeCard(check);
+			deck.takeCard(check + 1);
 		} else {
 			deck.addCard(input);
 		}
 
 	}
-	
-	
-    //setter getter
-    
+
+	// setter getter
+
 	public String getName() {
 		return name;
 	}
