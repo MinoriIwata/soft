@@ -73,10 +73,11 @@ public class GameApplication {
 	 */
 	public void distribute() {
 		int size = deck.size();
+		System.out.println("------------------配布.--------------------");
 		for (int i = 0; i < size; i++) {
 			Player target = ls.getPlayers().get(i % ls.getPlayerNumber());
 			ls.addCard(target, deck.takeCard());
-			System.out.println("------------------配布.--------------------");
+			
 
 		}
 	}
