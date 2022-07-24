@@ -4,6 +4,9 @@ import junit.framework.TestCase;
 import se.t2055405.card.game.Game;
 import se.t2055405.card.game.GameApplication;
 
+/**
+ * トランプゲームのババ抜きゲームクラスのテストクラス
+ */
 public class GameTest extends TestCase {
 
 	private Game game;

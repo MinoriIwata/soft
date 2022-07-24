@@ -10,7 +10,9 @@ import se.t2055405.card.entity.Player;
 import se.t2055405.card.game.GameApplication;
 import se.t2055405.card.game.PlayerList;
 import se.t2055405.card.game.Winner;
-
+/**
+ * トランプゲームのババ抜きアプリクラスのテストクラス
+ */
 public class GameApplicationTest extends TestCase {
 	private Player a;
 	private Card ace;

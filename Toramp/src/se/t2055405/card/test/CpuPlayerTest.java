@@ -6,13 +6,16 @@ import junit.framework.TestCase;
 import se.t2055405.card.entity.Card;
 import se.t2055405.card.entity.CardDeck;
 import se.t2055405.card.entity.CpuPlayer;
-
+/**
+ * トランプゲームのCPUプレイヤークラスのテストクラス
+ */
 public class CpuPlayerTest extends TestCase {
 
 	private CpuPlayer a;
 	/**
 	 * コンストラクタ
 	 * @param name
+	 *         名前
 	 */
 	public CpuPlayerTest(String name) {
 		super(name);

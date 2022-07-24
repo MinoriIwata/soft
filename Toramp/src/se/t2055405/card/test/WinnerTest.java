@@ -12,7 +12,9 @@ import se.t2055405.card.entity.Card;
 import se.t2055405.card.entity.CardDeck;
 import se.t2055405.card.entity.Player;
 import se.t2055405.card.game.Winner;
-
+/**
+ * トランプゲームの勝者リストクラスのテストクラス
+ */
 public class WinnerTest extends TestCase {
 
 	private Player a, b, c;

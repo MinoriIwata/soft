@@ -11,7 +11,9 @@ import junit.framework.TestCase;
 import se.t2055405.card.entity.Card;
 import se.t2055405.card.entity.CardDeck;
 import se.t2055405.card.entity.Player;
-
+/**
+ * トランプゲームのプレイヤークラスのテストクラス
+ */
 public class PlayerTest extends TestCase {
 
 	private Player a, b, c;
@@ -22,6 +24,7 @@ public class PlayerTest extends TestCase {
 	 * コンストラクタ
 	 * 
 	 * @param name
+	 *         名前
 	 */
 	public PlayerTest(String name) {
 		super(name);

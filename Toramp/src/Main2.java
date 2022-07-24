@@ -17,6 +17,7 @@ public class Main2 {
 /**
  * メインクラス
  * @param args
+ *        開始
  */
 	public static void main(String[] args) {
 		
