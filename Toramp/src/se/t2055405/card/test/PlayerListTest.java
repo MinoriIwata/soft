@@ -1,4 +1,4 @@
-package se.t2055405.card.game;
+package se.t2055405.card.test;
 
 import static org.hamcrest.CoreMatchers.*;
 
@@ -11,6 +11,8 @@ import junit.framework.TestCase;
 import se.t2055405.card.entity.Card;
 import se.t2055405.card.entity.CardDeck;
 import se.t2055405.card.entity.Player;
+import se.t2055405.card.game.PlayerList;
+import se.t2055405.card.game.Winner;
 
 public class PlayerListTest extends TestCase {
 
