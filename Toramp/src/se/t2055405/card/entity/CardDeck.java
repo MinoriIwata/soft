@@ -8,7 +8,7 @@ import java.util.List;
  * トランプのカードデッキを表すクラス.
  * 
  * @author Minori Iwata
- * @version 0.1 2022-07-09
+ * @version 0.1 2022-07-24
  * @since JDK1.8
  *
  */

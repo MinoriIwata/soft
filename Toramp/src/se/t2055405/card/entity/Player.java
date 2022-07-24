@@ -6,7 +6,7 @@ import se.t2055405.card.game.KeyBoard;
  * ゲームプレイヤーを表すクラス
  * 
  * @author Minori Iwata
- * @version 0.1 2022-07-09
+ * @version 0.1 2022-07-24
  * @since JDK1.8
  *
  */

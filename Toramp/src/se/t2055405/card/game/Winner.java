@@ -1,11 +1,13 @@
-package se.t2055405.card.entity;
+package se.t2055405.card.game;
 
 import java.util.ArrayList;
+
+import se.t2055405.card.entity.Player;
 
 /**
  * ゲームの勝者を格納するリストクラス 
  * @author Minori Iwata
- * @version 0.1 2022-07-09
+ * @version 0.1 2022-07-24
  * @since JDK1.8
  *
  */

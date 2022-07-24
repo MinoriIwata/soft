@@ -4,7 +4,6 @@ import se.t2055405.card.entity.Card;
 import se.t2055405.card.entity.CardDeck;
 import se.t2055405.card.entity.CpuPlayer;
 import se.t2055405.card.entity.Player;
-import se.t2055405.card.entity.PlayerList;
 
 /**
  * ババ抜きゲームの機能を管理するクラス

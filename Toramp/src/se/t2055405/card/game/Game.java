@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import se.t2055405.card.entity.Card;
 import se.t2055405.card.entity.CardDeck;
 import se.t2055405.card.entity.Player;
-import se.t2055405.card.entity.PlayerList;
-import se.t2055405.card.entity.Winner;
 
 /**
  * ババ抜きを動かすクラス
  * 
  * @author Minori Iwata
- * @version 0.1 2022-07-09
+ * @version 0.1 2022-07-24
  * @since JDK1.8
  *
  */

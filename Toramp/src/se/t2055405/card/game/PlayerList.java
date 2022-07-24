@@ -1,13 +1,18 @@
-package se.t2055405.card.entity;
+package se.t2055405.card.game;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import se.t2055405.card.entity.Card;
+import se.t2055405.card.entity.CardDeck;
+import se.t2055405.card.entity.CpuPlayer;
+import se.t2055405.card.entity.Player;
 
 /**
  * トランプのプレイヤーのリストを表すクラス
  * 
  * @author Minori Iwata
- * @version 0.1 2022-07-09
+ * @version 0.1 2022-07-24
  * @since JDK1.8
  *
  */
@@ -96,8 +101,8 @@ public class PlayerList {
 	 * @param target 対象となるプレイヤー
 	 */
 	public void checkPlayer(Player target) {
-		int t = target.deckSize();
-		if (t == 0) {
+		boolean t = target.getDeck().isEmpty();
+		if (t == true) {
 			System.out.println(target.getName() + "さんの手札が0になりました!勝ち抜けです");
 			int s = searchPerson(target);
 			if (s >= 0) {
@@ -170,8 +175,7 @@ public class PlayerList {
 	/**
 	 * 参加者リストを取得する
 	 * 
-	 * @return players
-	 *          参加者リスト
+	 * @return players 参加者リスト
 	 */
 	public ArrayList<Player> getPlayers() {
 		return players;
@@ -188,8 +192,8 @@ public class PlayerList {
 
 	/**
 	 * 参加者数を取得する
-	 * @return playerNumber
-	 *         参加者数
+	 * 
+	 * @return playerNumber 参加者数
 	 */
 	public int getPlayerNumber() {
 		return playerNumber;
@@ -206,8 +210,8 @@ public class PlayerList {
 
 	/**
 	 * 勝者リストを取得する
-	 * @return winner
-	 *          勝者リスト
+	 * 
+	 * @return winner 勝者リスト
 	 */
 	public Winner getWinner() {
 		return winner;
@@ -215,8 +219,8 @@ public class PlayerList {
 
 	/**
 	 * 勝者リストをセットする
-	 * @param winner
-	 *          勝者リスト      
+	 * 
+	 * @param winner 勝者リスト
 	 */
 	public void setWinner(Winner winner) {
 		this.winner = winner;

@@ -5,7 +5,7 @@ import java.util.Random;
  * CPUの参加者を表すプレイヤー拡張クラス
  * 
  * @author Minori Iwata
- * @version 0.1 2022-07-09
+ * @version 0.1 2022-07-24
  * @since JDK1.8
  *
  */
