@@ -41,9 +41,8 @@ public class Player {
 	public int choiseCard(int size) {
 		System.out.println("何番目のカードを引きますか？相手は" + size + "枚持っています");
 		int choise = KeyBoard.inputNumber();
-		while(choise>size)
-		{
-			System.out.println("そんなにカードはないよ!" );
+		while (choise > size) {
+			System.out.println("そんなにカードはないよ!");
 			System.out.println("何番目のカードを引きますか？相手は" + size + "枚持っています");
 			choise = KeyBoard.inputNumber();
 		}
@@ -100,12 +99,23 @@ public class Player {
 		for (int i = 0; i < size; i++) {
 			int check = deck.searchCard(deck.seeCard(i + 1).getNumber());
 			if (check >= 0 && check != i) {
-				deck.takeCard(check + 1);
-				deck.takeCard(i);
+				if (check > i) {
+					deck.takeCard(check+1);
+					deck.takeCard(i+1);
+					i = i -1;
+				}
+				else
+				{
+					
+					deck.takeCard(i+1);
+					deck.takeCard(check+1);
+					i = i -2;
+				}
+
 				size = deck.size();
 				deck.showAllCards();
 				System.out.println("----------------------------");
-				i = i - 1;
+			
 
 			}
 

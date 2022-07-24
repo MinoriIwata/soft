@@ -113,7 +113,7 @@ public class CardDeck {
 	}
 
 	/**
-	 * 絵柄と番号を与えて、そのカードがデッキの何番目にあるかを調べる。デッキにそのカードが無ければ0を返す.
+	 * 絵柄と番号を与えて、そのカードがデッキの何番目にあるかを調べる。デッキにそのカードが無ければ-1を返す.
 	 * 
 	 * @param suit   絵柄
 	 * @param number 番号
@@ -125,7 +125,7 @@ public class CardDeck {
 		if (search >= 0) {
 			return search + 1;
 		} else {
-			return 0;
+			return -1;
 		}
 
 	}

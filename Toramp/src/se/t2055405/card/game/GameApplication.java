@@ -105,6 +105,7 @@ public class GameApplication {
 		Card card = ls.takeCard(taken, t);
 		if (take instanceof CpuPlayer) {
 			take.getDeck().shuffle();
+			
 		} else {
 
 			System.out.println("引いたカードは" + card.toString() + "です");
@@ -116,6 +117,8 @@ public class GameApplication {
 		take.checkCard(card);
 		ls.checkPlayer(taken);
 		ls.checkPlayer(take);
+		
+
 	}
 
 	/**

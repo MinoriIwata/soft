@@ -1,55 +1,92 @@
 package se.t2055405.card.test;
 
+import static org.hamcrest.CoreMatchers.*;
+
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+
+import org.hamcrest.Matcher;
+
 import junit.framework.TestCase;
+import se.t2055405.card.entity.Card;
+import se.t2055405.card.entity.CardDeck;
+import se.t2055405.card.entity.Player;
 
 public class PlayerTest extends TestCase {
 
+	private Player a,b,c;
+	ByteArrayOutputStream out = new ByteArrayOutputStream();
+	Card joker,ace;
+	
 	public PlayerTest(String name) {
 		super(name);
 	}
-
+ 
+	
 	protected void setUp() throws Exception {
+		ArrayList <Card> test2=new ArrayList<Card>();
+		ArrayList <Card> test1=new ArrayList<Card>();
+		ArrayList <Card> test3=new ArrayList<Card>();
+		CardDeck deck1=new CardDeck(test1);
+		CardDeck deck2=new CardDeck(test2);
+		CardDeck deck3=new CardDeck(test3);
+		joker=new Card(-1,0);
+		ace=new Card(0,1);
+		deck2.addCard(joker);
+		deck2.addCard(ace);
+		deck1.addCard(ace);
+		deck3.createFullDeck();
 		super.setUp();
+		a=new Player("test1",deck1);
+		b=new Player("test2",deck2);
+		c=new Player("test3",deck3);
 	}
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
 
-	public void testPlayer() {
-		fail("まだ実装されていません");
-	}
-
-	public void testPlayerStringCardDeck() {
-		fail("まだ実装されていません");
-	}
-
-	public void testChoiseCard() {
-		fail("まだ実装されていません");
-	}
-
+	
 	public void testShowCard() {
-		fail("まだ実装されていません");
+		b.showCard();
+		assretThat(out.toString(),is("ジョーカー"+ System.lineSeparator()));
+	}
+
+	private void assretThat(String string, Matcher<String> matcher) {
+		// TODO 自動生成されたメソッド・スタブ
+		
 	}
 
 	public void testAddCard() {
-		fail("まだ実装されていません");
+		a.addCard(joker);
+		assertEquals(2, a.deckSize());
+		assertEquals(2, b.deckSize());
 	}
 
 	public void testTakeCard() {
-		fail("まだ実装されていません");
+		
+		assertEquals(ace, a.takeCard(1));
+		assertEquals(ace, b.takeCard(2));
+		
 	}
 
 	public void testDeckSize() {
-		fail("まだ実装されていません");
+		assertEquals(2, b.deckSize());
+		assertEquals(1, a.deckSize());
+		assertEquals(52, c.deckSize());
+		
+	
 	}
 
 	public void testCheckCard() {
-		fail("まだ実装されていません");
+		c.checkCard();
+        
+		assertEquals(0, c.deckSize());
 	}
 
 	public void testCheckCardCard() {
-		fail("まだ実装されていません");
+		a.checkCard(ace);
+		assertEquals(0, a.deckSize());
 	}
 
 }
