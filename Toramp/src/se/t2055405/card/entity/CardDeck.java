@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import se.t2055405.card.game.KeyBoard;
+
 /**
  * トランプのカードデッキを表すクラス.
  * 
@@ -94,6 +96,15 @@ public class CardDeck {
 	 * @return take i番目にあるカード
 	 */
 	public Card takeCard(int i) {
+		if(i-1<0)
+		{
+			
+			while(i-1>0)
+			{
+			System.out.println("カードの位置が間違っています,入力しなおしてください");
+			i=KeyBoard.inputNumber();
+			}
+		}
 		Card take = cards.get(i - 1);
 		cards.remove(i - 1);
 		return take;

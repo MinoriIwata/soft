@@ -1,8 +1,11 @@
-package se.t2055405.card.entity;
+package se.t2055405.card.test;
 
 import java.util.ArrayList;
 
 import junit.framework.TestCase;
+import se.t2055405.card.entity.Card;
+import se.t2055405.card.entity.CardDeck;
+import se.t2055405.card.entity.CpuPlayer;
 
 public class CpuPlayerTest extends TestCase {
 
